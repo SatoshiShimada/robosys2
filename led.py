@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import rospy
-from std_msgs.msg import Int32
 from std_msgs.msg import Int8
 import subprocess
 import wiringpi
@@ -20,7 +19,7 @@ def cb(message):
         rospy.loginfo("detected object: " + str(message.data))
         wiringpi.digitalWrite(led_pin, HIGH)
     else:
-        rospy.loginfo("detected object: " + str(message.data) + "LOW")
+        rospy.loginfo("detected object: " + str(message.data))
         wiringpi.digitalWrite(led_pin, LOW)
 
 if __name__ == '__main__':
